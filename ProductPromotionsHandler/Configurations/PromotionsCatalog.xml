@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PROMOTIONS>
+  <PROMOTION>
+    <PRODUCT name="A" quantity="3" price="130"/>
+    <PRODUCT name="B" quantity="2" price="45"/>
+  </PROMOTION>
+  <COMBOS>
+    <COMBO products="C,D" price="30" />
+  </COMBOS>
+</PROMOTIONS>

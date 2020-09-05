@@ -6,5 +6,6 @@ namespace ProductManagement.Models
 {
     class OrderDetails
     {
+
     }
 }

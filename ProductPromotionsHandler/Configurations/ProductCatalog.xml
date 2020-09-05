@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PRODUCTS>
+  <PRODUCT name="A" price="50"/>
+  <PRODUCT name="B" price="30"/>
+  <PRODUCT name="C" price="20"/>
+  <PRODUCT name="D" price="15"/>
+</PRODUCTS>
