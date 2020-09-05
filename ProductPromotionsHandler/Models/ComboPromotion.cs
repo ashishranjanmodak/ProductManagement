@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProductPromotionsHandler.Models
 {
-    class Combo
+    public class ComboPromotion
     {
         public Product Product { get; set; }
         public int Quantity { get; set; }

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using ProductPromotionsHandler.Contracts;
 
 namespace ProductPromotionsHandler.Models
 {
-    class ProductCatalog
+    public class ProductCatalog: IProductCatalog
     {
-        public List<Product> Products;
+        public List<Product> Products { get; }
         public ProductCatalog()
         {
             var xmlDoc = new XmlDocument();

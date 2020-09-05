@@ -1,14 +1,15 @@
-﻿using System;
+﻿using ProductPromotionsHandler.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
 namespace ProductPromotionsHandler.Models
 {
-    class PromotionsCatalog
+    public class PromotionsCatalog: IPromotionsCatalog
     {
-        public List<Promotion> Promotions;
-        public List<Combo> Combos;
+        public List<Promotion> Promotions { get; }
+        public List<ComboPromotion> Combos { get; }
 
         public PromotionsCatalog()
         {
@@ -38,7 +39,7 @@ namespace ProductPromotionsHandler.Models
             var nodeList = xmlDoc.SelectNodes("/PROMOTIONSCATALOG/COMBOS/COMBO");
             foreach (XmlNode node in nodeList)
             {
-                Combo promo = new Combo();
+                ComboPromotion promo = new ComboPromotion();
                 Product product = new Product();
                 var productNode = node.FirstChild;
                 product.Name = productNode.Attributes["name"].Value;
