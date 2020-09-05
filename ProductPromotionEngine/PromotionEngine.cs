@@ -11,6 +11,10 @@ namespace ProductPromotionEngine
     {
         public ProductCatalog ProductCatalog;
         public PromotionsCatalog PromotionsCatalog;
+        public PromotionEngine(): this(new ProductCatalog(), new PromotionsCatalog())
+        {
+
+        }
         public PromotionEngine(IProductCatalog productCatalog, IPromotionsCatalog promotionsCatalog)
         {
             ProductCatalog = (ProductCatalog) productCatalog;
