@@ -13,8 +13,10 @@ namespace ProductPromotionsHandler.Models
 
         public PromotionsCatalog()
         {
+            Promotions = new List<Promotion>();
+            Combos = new List<ComboPromotion>();
             var xmlDoc = new XmlDocument();
-            xmlDoc.Load(@"../Configurations/PromotionsCatalog.xml");
+            xmlDoc.Load(@"../../../../ProductPromotionsHandler/Configurations/PromotionsCatalog.xml");
             ExtractPromotions(xmlDoc);
             ExtractCombos(xmlDoc);
         }

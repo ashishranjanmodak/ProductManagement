@@ -8,11 +8,12 @@ namespace ProductPromotionsHandler.Models
 {
     public class ProductCatalog: IProductCatalog
     {
-        public List<Product> Products { get; }
+        public List<Product> Products { get; private set; }
         public ProductCatalog()
         {
+            Products = new List<Product>();
             var xmlDoc = new XmlDocument();
-            xmlDoc.Load(@"../Configurations/ProductCatalog.xml");
+            xmlDoc.Load(@"../../../../ProductPromotionsHandler/Configurations/ProductCatalog.xml");
             ExtractProducts(xmlDoc);
         }
 

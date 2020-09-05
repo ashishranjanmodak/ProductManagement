@@ -7,6 +7,10 @@ namespace ProductPromotionEngine.Models
     public class OrderDetails
     {
         Dictionary<string, int> Orders;
+        public OrderDetails()
+        {
+            Orders = new Dictionary<string, int>();
+        }
 
         public void AddOrders(string productName, int quantity)
         {

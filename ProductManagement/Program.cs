@@ -22,7 +22,7 @@ namespace ProductManagement
                 Console.WriteLine("Do you want to add another product?");
                 Console.WriteLine("Enter 'Y' for Yes or 'N' for No");
                 var response = Console.ReadLine();
-                i = response != "Y" ? false : true;
+                i = response == "Y" || response == "y";
             } while (i);
             var cost = promotionEngine.CalculateCost(order);
             Console.Write("Total: {0}", cost);

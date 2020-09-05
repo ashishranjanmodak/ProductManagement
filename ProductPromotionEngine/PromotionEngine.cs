@@ -39,32 +39,48 @@ namespace ProductPromotionEngine
                 
                 if (combo != null)
                 {
+                    bool isCombo = true;
                     var productNames = combo.Product.Name.Split(',');
                     Dictionary<string, int> prod = new Dictionary<string, int>();
                     foreach(var name in productNames)
                     {
-                        prod.Add(name, orders[name]);
+                        if(orders.ContainsKey(name)) prod.Add(name, orders[name]);
+                        else
+                        {
+                            orderTotal += CalculateWithoutCombo(pair, promotion, product);
+                            isCombo = false;
+                            break;
+                        }
                     }
-                    var minOrder = prod.Values.Min();
-                    orderTotal += combo.Price * minOrder;
-                    foreach(var item in prod)
+                    if (isCombo)
                     {
-                        var productForItem = ProductCatalog.Products.FirstOrDefault(prod => prod.Name.Equals(item.Key));
-                        orderTotal += (item.Value - minOrder) * productForItem.Price;
+                        var minOrder = prod.Values.Min();
+                        orderTotal += combo.Price * minOrder;
+                        foreach (var item in prod)
+                        {
+                            var productForItem = ProductCatalog.Products.FirstOrDefault(prod => prod.Name.Equals(item.Key));
+                            orderTotal += (item.Value - minOrder) * productForItem.Price;
+                            orders.Remove(item.Key);
+                        }
                     }
                 }
-                else if (promotion != null && product != null)
-                {
-                    var promoTemp = pair.Value / promotion.Quantity;
-                    var rem = pair.Value % promotion.Quantity;
-                    orderTotal += promoTemp * promotion.Price + rem * product.Price;
-                }
-                else
-                {
-                    orderTotal += pair.Value * product.Price;
-                }
+                else orderTotal += CalculateWithoutCombo(pair, promotion, product);
             }
             return orderTotal;
+        }
+
+        private static decimal CalculateWithoutCombo(KeyValuePair<string, int> pair, Promotion promotion, Product product)
+        {
+            if (promotion != null && product != null)
+            {
+                var promoTemp = pair.Value / promotion.Quantity;
+                var rem = pair.Value % promotion.Quantity;
+                return promoTemp * promotion.Price + rem * product.Price;
+            }
+            else
+            {
+                return pair.Value * product.Price;
+            }
         }
     }
 }
