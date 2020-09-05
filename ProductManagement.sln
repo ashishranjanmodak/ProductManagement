@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement", "Produc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductPromotionsHandler", "ProductPromotionsHandler\ProductPromotionsHandler.csproj", "{AB6F5199-CF03-4FAA-A5C8-C2E78C456C78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductPromotionEngine", "ProductPromotionEngine\ProductPromotionEngine.csproj", "{9CC37958-CD12-43A1-A911-E90D87A156F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AB6F5199-CF03-4FAA-A5C8-C2E78C456C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB6F5199-CF03-4FAA-A5C8-C2E78C456C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB6F5199-CF03-4FAA-A5C8-C2E78C456C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC37958-CD12-43A1-A911-E90D87A156F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC37958-CD12-43A1-A911-E90D87A156F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC37958-CD12-43A1-A911-E90D87A156F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC37958-CD12-43A1-A911-E90D87A156F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
